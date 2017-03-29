@@ -14,25 +14,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             margin: 20px;
         }
         #body {
-            margin-top : 20px;
+            margin-top: 60px;
+        }
+        .messes {
+            color: green;
+            margin-left: 20px;
+            margin-top : 15px;
+            float: left;
         }
     </style>
 </head>
 <body>
 
 <div id="container">
-    <div style="font-size:16px;">Hello <i><?php echo $username;?> </i><b><a href="<?php echo base_url();?>index.php/county/logout" >LogOut</a> </b></div>
+    <div style="font-size:16px;float:right;">Hello <i><?php echo $username;?> </i><b><a href="<?php echo base_url();?>index.php/county/logout" >LogOut</a> </b></div>
 	<div style = "text-align:center;"><h1>List of County!</h1></div>
-    <?php
-    if(isset($mess) && $mess != ''){
-        echo "<div class='active'>";
-        echo "<ul>";
-            echo "<li>$mess</li>";
-        echo "</ul>";
-        echo "</div>";
-    }
-  ?>
-  <div><a href="<?php echo base_url();?>index.php/add" class="btn btn-info" role="button">Add County</a></div>
+  <div><div style="float:left"><a href="<?php echo base_url();?>index.php/add" class="btn btn-info" role="button">Add County</a></div>
+  <div class="messes"><?php  if(isset($mess) && $mess != ''){
+            echo $mess;
+    }?></div>
+  </div>
 	<div id="body">
          <div class="table-responsive">
           <table class="table table-bordered" >
