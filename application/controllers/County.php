@@ -16,14 +16,7 @@ class County extends CI_Controller {
 		$this->load->view('county', $data);
 	}
     public function logout() {
-        if (!empty($_SESSION['id'])) {
-            $data = array(
-                "access_token" => $_SESSION['id'],
-            );
-            $respone = $this->callapi->post_api($this->config->item('api_url')."/Customers/logout", $data);
-            unset($_SESSION['id']);
-            unset($_SESSION['username']);
-            redirect(base_url());
-        }
+        unset($_SESSION['username']);
+        redirect(base_url());
     }
 }

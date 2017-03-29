@@ -21,7 +21,6 @@ class Welcome extends CI_Controller {
         $respone = $this->callapi->post_api($this->config->item('api_url')."/Customers/login", $data);
         if (!$respone->error) {
             $this->session->set_userdata('username',$this->input->post("username"));
-            $this->session->set_userdata('id',$respone->id);
             redirect(base_url().'index.php/county');
         }
         else {
