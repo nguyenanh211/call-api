@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-    <div style="color: blue;font-size:16px;">Hello <i><?php echo $username;?> </i><b><a href="<?php echo base_url();?>index.php/county/logout" >LogOut</a> </b></div>
+    <div style="font-size:16px;">Hello <i><?php echo $username;?> </i><b><a href="<?php echo base_url();?>index.php/county/logout" >LogOut</a> </b></div>
 	<div style = "text-align:center;"><h1>List of County!</h1></div>
     <?php
     if(isset($mess) && $mess != ''){
